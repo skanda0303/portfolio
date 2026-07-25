@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skanda Ramesh Bharadwaja — AI &amp; ML Engineer | Portfolio</title>
+  <meta name="description" content="Portfolio of Skanda Ramesh Bharadwaja - B.Tech CSE (AI & ML) graduate, AI Engineer, Multi-Agent RAG Specialist, and IEEE Research Author.">
+  <meta name="keywords" content="Skanda Ramesh Bharadwaja, AI Engineer, Machine Learning, RAG, LangChain, Multi-Agent, Atlas RAG, Intellect, RV University">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="amber">
+
+  <!-- BACKGROUND CANVAS FOR THREE.JS -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="glow-vignette"></div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-box">SR</span>
+        <span class="logo-text">Bharadwaja<span class="logo-dot">.</span></span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active"><i class="fas fa-house-user"></i> Home</a>
+        <a href="#summary" class="nav-link"><i class="fas fa-user-astronaut"></i> About</a>
+        <a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+        <a href="#projects" class="nav-link"><i class="fas fa-code-branch"></i> Projects</a>
+        <a href="#publications" class="nav-link"><i class="fas fa-scroll"></i> Research</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher Dropdown/Buttons -->
+        <div class="theme-picker" title="Switch Theme Color">
+          <button class="theme-dot dot-amber active" data-set-theme="amber" aria-label="Amber Theme"></button>
+          <button class="theme-dot dot-violet" data-set-theme="violet" aria-label="Violet Theme"></button>
+          <button class="theme-dot dot-cyan" data-set-theme="cyan" aria-label="Cyan Theme"></button>
+          <button class="theme-dot dot-emerald" data-set-theme="emerald" aria-label="Emerald Theme"></button>
+        </div>
+
+        <!-- CLI Launcher Button -->
+        <button class="btn-icon" id="cli-trigger" title="Toggle CLI Terminal Mode">
+          <i class="fas fa-terminal"></i>
+        </button>
+
+        <!-- Resume Download -->
+        <a href="Initial Resume_1.pdf" download="Skanda_Ramesh_Bharadwaja_Resume.pdf" class="btn btn-sm btn-primary">
+          <i class="fas fa-file-download"></i> <span>Resume</span>
+        </a>
+
+        <!-- Hamburger Menu -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle Mobile Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span class="badge-text">AVAILABLE FOR AI / ML &amp; SOFTWARE ROLES</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-greeting">Hello, I'm</span>
+        <span class="hero-name-primary">Skanda Ramesh</span>
+        <span class="hero-name-secondary gradient-text">Bharadwaja</span>
+      </h1>
+
+      <div class="hero-role-ticker">
+        <span class="ticker-prefix">&gt;&nbsp;</span>
+        <span id="typed-text" class="typed-text">AI &amp; Machine Learning Engineer</span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-description">
+        Recent <strong>B.Tech CSE</strong> graduate specializing in <strong>Artificial Intelligence and Machine Learning (AI &amp; ML)</strong>. 
+        Passionate about <strong>Python software development</strong>, <strong>Generative AI</strong>, <strong>RAG Systems</strong>, and <strong>Model Testing &amp; Evaluation</strong>. 
+        Co-authored research published in <strong>IEEE i3ctcon 2026</strong>.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-lg btn-primary">
+          <i class="fas fa-rocket"></i> View Repositories
+        </a>
+        <button class="btn btn-lg btn-outline" id="hero-cli-btn">
+          <i class="fas fa-terminal"></i> Launch CLI
+        </button>
+        <button class="btn btn-lg btn-glass" id="hero-bot-btn">
+          <i class="fas fa-robot"></i> Ask AI Bot
+        </button>
+      </div>
+
+      <div class="hero-meta-strip">
+        <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA, India</div>
+        <div class="meta-item"><i class="fas fa-university"></i> RV University</div>
+        <div class="meta-item"><i class="fas fa-award"></i> IEEE Research Author</div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" id="scroll-indicator">
+      <span class="scroll-text">EXPLORE</span>
+      <div class="mouse-icon">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section" id="summary">
+    <div class="section-header center-header">
+      <span class="section-tag"><i class="fas fa-user-astronaut"></i> Professional Profile</span>
+      <h2 class="section-title">Bridging <span class="gradient-text">AI Innovation</span> &amp; Software Engineering</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid" style="grid-template-columns: 1fr;">
+      <div class="about-card glass-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="about-body">
+          <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+          <p class="about-paragraph">
+            Recent <strong>B.Tech Computer Science Engineering</strong> graduate with a core specialization in 
+            <strong>Artificial Intelligence &amp; Machine Learning (AI &amp; ML)</strong> from RV University. 
+            Strong passion for <strong>Python development</strong>, <strong>Data Structures &amp; Algorithms</strong>, 
+            and building efficient, scalable software solutions.
+          </p>
+          <p class="about-paragraph">
+            Experienced in building end-to-end AI applications, local document intelligence assistants, NLP analytics engines, 
+            and neural architectures — complemented by <strong>IEEE research publication</strong> experience. 
+            Eager to contribute, learn, and grow in challenging AI and software engineering roles.
+          </p>
+
+          <h4 style="margin-top: 24px; margin-bottom: 12px; font-size: 1.05rem; color: #ffffff;"><i class="fas fa-heart" style="color: var(--primary);"></i> Core Technical Interests</h4>
+          <div class="about-expertise-tags">
+            <span class="exp-pill"><i class="fas fa-sparkles"></i> Generative AI (GenAI)</span>
+            <span class="exp-pill"><i class="fas fa-diagram-project"></i> Retrieval-Augmented Generation (RAG)</span>
+            <span class="exp-pill"><i class="fas fa-vial-circle-check"></i> Model Testing &amp; Evaluation</span>
+            <span class="exp-pill"><i class="fas fa-comments"></i> Natural Language Processing (NLP)</span>
+            <span class="exp-pill"><i class="fas fa-brain"></i> Deep Learning &amp; Computer Vision</span>
+            <span class="exp-pill"><i class="fab fa-python"></i> Python Development &amp; Algorithms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="section" id="education">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-graduation-cap"></i> Academics</span>
+      <h2 class="section-title">Education &amp; <span class="gradient-text">Background</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="timeline-wrapper">
+      <div class="timeline-track"></div>
+
+      <!-- RV University -->
+      <div class="timeline-card glass-panel" data-tilt>
+        <div class="tl-node"><i class="fas fa-university"></i></div>
+        <div class="tl-header">
+          <span class="tl-date"><i class="far fa-calendar-alt"></i> 2023 &ndash; 2027</span>
+          <span class="badge badge-accent">Specialization: AI &amp; ML</span>
+        </div>
+        <h3 class="tl-title">B.Tech. - CSE - Artificial Intelligence and Machine Learning</h3>
+        <div class="tl-subtitle"><i class="fas fa-building-columns"></i> <strong>RV University</strong>, Bengaluru</div>
+        <p class="tl-desc">
+          Computer science degree program focused on core software engineering, algorithms, machine learning models, 
+          generative AI architectures, multi-agent systems, and neural network optimization.
+        </p>
+      </div>
+
+      <!-- Base PU College -->
+      <div class="timeline-card glass-panel" data-tilt>
+        <div class="tl-node"><i class="fas fa-school"></i></div>
+        <div class="tl-header">
+          <span class="tl-date"><i class="far fa-calendar-alt"></i> 2023</span>
+          <span class="badge badge-cyan">Senior Secondary</span>
+        </div>
+        <h3 class="tl-title">12th Grade (Class XII) &mdash; PUE Karnataka</h3>
+        <div class="tl-subtitle"><i class="fas fa-school"></i> <strong>Base PU College</strong>, Mysore</div>
+        <p class="tl-desc">
+          Completed Senior Secondary Education focusing on Physics, Chemistry, and Mathematics.
+        </p>
+      </div>
+
+      <!-- Pushkarini School -->
+      <div class="timeline-card glass-panel" data-tilt>
+        <div class="tl-node"><i class="fas fa-award"></i></div>
+        <div class="tl-header">
+          <span class="tl-date"><i class="far fa-calendar-alt"></i> 2021</span>
+          <span class="badge badge-outline">Secondary School</span>
+        </div>
+        <h3 class="tl-title">10th Grade (Class X) &mdash; CBSE</h3>
+        <div class="tl-subtitle"><i class="fas fa-school"></i> <strong>Manasarowar Pushkarini Vidyasharama</strong>, Mysuru</div>
+        <p class="tl-desc">
+          Secondary school education building foundational mathematics, science, and analytical capabilities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- WORK EXPERIENCE SECTION -->
+  <section class="section" id="experience">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-briefcase"></i> Industry Experience</span>
+      <h2 class="section-title">Professional <span class="gradient-text">Internship</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="experience-card glass-card" data-tilt>
+      <div class="card-glow"></div>
+      <div class="exp-top">
+        <div class="company-logo-box"><i class="fas fa-building"></i></div>
+        <div class="exp-title-block">
+          <div class="exp-header-row">
+            <h3>AI Intern &mdash; Atlas Multi-Agent RAG System</h3>
+            <span class="exp-date-pill"><i class="far fa-calendar-alt"></i> 01 Jun, 2026 &ndash; 31 Jul, 2026</span>
+          </div>
+          <span class="company-name">Enkefalos Technologies Pvt Ltd <span class="company-tag">IT Product &amp; Services</span></span>
+        </div>
+      </div>
+
+      <div class="exp-tech-tags">
+        <span class="tag"><i class="fab fa-python"></i> Python</span>
+        <span class="tag"><i class="fas fa-diagram-next"></i> LangChain</span>
+        <span class="tag"><i class="fas fa-bolt"></i> FastAPI</span>
+        <span class="tag"><i class="fas fa-database"></i> Chroma DB</span>
+        <span class="tag"><i class="fas fa-sparkles"></i> Gemini API / Ollama</span>
+        <span class="tag"><i class="fas fa-magnifying-glass"></i> BM25 + BAAI/bge-m3</span>
+        <span class="tag"><i class="fas fa-globe"></i> Tavily Web Search</span>
+        <span class="tag"><i class="fas fa-shield-halved"></i> MD5 Fingerprinting</span>
+        <span class="tag"><i class="fas fa-stream"></i> Server-Sent Events (SSE)</span>
+      </div>
+
+      <ul class="exp-points">
+        <li>
+          <i class="fas fa-chevron-right"></i>
+          <span><strong>6-Stage Agentic Pipeline:</strong> Architected a multi-agent RAG workflow incorporating dual query rewriting, dense/sparse retrieval, context evaluation, Tavily live web fallback, Critic verification, and Supervisor token streaming.</span>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+          <span><strong>Hybrid Reranked Vector Engine:</strong> Fused BM25 sparse keyword search with <code>BAAI/bge-m3</code> dense vector embeddings in Chroma DB, applying cross-encoder reranking to maximize context precision and reduce model hallucinations.</span>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+          <span><strong>PDF Document &amp; Table Serialization:</strong> Engineered coordinate-filtered bounding box extraction using <code>pdfplumber</code> to convert complex PDF tables into structured Markdown prose while retaining table headers.</span>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+          <span><strong>Multi-Session History &amp; Fingerprinting:</strong> Implemented MD5 cryptographic hashing for instant document deduplication alongside persistent SQLite session management and FastAPI async event streaming.</span>
+        </li>
+        <li>
+          <i class="fas fa-chevron-right"></i>
+          <span><strong>Hugging Face Cloud Deployment:</strong> Successfully packaged and deployed the full system as a live interactive space on Hugging Face Spaces (<code>skandas/Atlas</code>).</span>
+        </li>
+      </ul>
+
+      <div class="exp-footer btn-group-flex" style="margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border-glass); gap: 14px;">
+        <a href="https://github.com/skanda0303/aichatbot" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+          <i class="fab fa-github"></i> GitHub Repository
+        </a>
+        <a href="https://huggingface.co/spaces/skandas/Atlas" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+          <i class="fas fa-external-link-alt"></i> Live Hugging Face Demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <div class="section-header center-header">
+      <span class="section-tag"><i class="fas fa-code-branch"></i> Open-Source Projects</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Repositories &amp; Systems</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Repo 2: Intellect Google Drive Assistant -->
+      <div class="project-card glass-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="proj-banner">
+          <div class="proj-type-badge"><i class="fab fa-google-drive"></i> Cognitive Drive Assistant</div>
+          <div class="proj-icon-large"><i class="fas fa-folder-tree"></i></div>
+        </div>
+
+        <div class="proj-content">
+          <h3 class="proj-title">Intellect — AI-Powered Intelligent Drive Agent</h3>
+          <div class="proj-stack">
+            <span>React</span><span>Node.js</span><span>Express</span><span>Ollama</span><span>SQLite</span><span>Google OAuth</span><span>LangChain</span>
+          </div>
+
+          <p class="proj-summary">
+            Autonomous document cognitive assistant that automatically scans, indexes, categorizes, and reorganizes Google Drive files in real-time using local LLMs.
+          </p>
+
+          <ul class="proj-features">
+            <li><i class="fas fa-check"></i> Built a privacy-first local RAG chat system powered by Ollama models (Gemma &amp; Qwen) and SQLite vector storage.</li>
+            <li><i class="fas fa-check"></i> Engineered a 3-tier hybrid search system combining filename stem matching, vector similarity, and keyword coverage.</li>
+            <li><i class="fas fa-check"></i> Developed automated taxometric document categorization and folder reorganization executed via Google Drive API.</li>
+          </ul>
+
+          <div class="proj-footer">
+            <a href="https://github.com/skanda0303/Final_Miniproject" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repo 3: Emotion Drift Analyzer -->
+      <div class="project-card glass-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="proj-banner">
+          <div class="proj-type-badge"><i class="fas fa-chart-line"></i> NLP Analytics Dashboard</div>
+          <div class="proj-icon-large"><i class="fas fa-face-smile"></i></div>
+        </div>
+
+        <div class="proj-content">
+          <h3 class="proj-title">Emotion Drift Analyzer</h3>
+          <div class="proj-stack">
+            <span>Python</span><span>FastAPI</span><span>PyTorch</span><span>Transformers</span><span>Chart.js</span><span>HTML/CSS</span>
+          </div>
+
+          <p class="proj-summary">
+            Research-style NLP analytics dashboard for tracking how human emotions evolve across long multi-turn conversations in real-time.
+          </p>
+
+          <ul class="proj-features">
+            <li><i class="fas fa-check"></i> Fine-tuned RoBERTa models using QLoRA 4-bit quantization for multi-class emotion classification.</li>
+            <li><i class="fas fa-check"></i> Developed emotion trajectory slope analytics and a stateful decision matrix for escalation risk scoring.</li>
+            <li><i class="fas fa-check"></i> Built an interactive frontend dashboard with Chart.js line charts, hover inspection, and JSON export capabilities.</li>
+          </ul>
+
+          <div class="proj-footer">
+            <a href="https://github.com/skanda0303/nlp_proj" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repo 4: Generative AI Lab -->
+      <div class="project-card glass-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="proj-banner">
+          <div class="proj-type-badge"><i class="fas fa-flask"></i> GenAI Research Suite</div>
+          <div class="proj-icon-large"><i class="fas fa-sparkles"></i></div>
+        </div>
+
+        <div class="proj-content">
+          <h3 class="proj-title">Generative AI Laboratory &amp; ReAct Agent</h3>
+          <div class="proj-stack">
+            <span>Python</span><span>PyTorch</span><span>FastAPI</span><span>LangChain</span><span>ChromaDB</span><span>JavaScript</span>
+          </div>
+
+          <p class="proj-summary">
+            Experimental Generative AI repository housing custom neural architecture implementations and an agentic codebase Q&amp;A framework.
+          </p>
+
+          <ul class="proj-features">
+            <li><i class="fas fa-check"></i> Implemented a ReAct (Reason + Act) agent loop for multi-step reasoning over GitHub codebases.</li>
+            <li><i class="fas fa-check"></i> Built tool registries for documentation search, source code inspection, and project structure listing.</li>
+            <li><i class="fas fa-check"></i> Designed multi-collection vector indexing in ChromaDB to split source code, docs, and config files.</li>
+          </ul>
+
+          <div class="proj-footer">
+            <a href="https://github.com/skanda0303/gen_ai" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH & PUBLICATIONS SECTION (CLEAN TEXT-ONLY WITHOUT GAN IMAGES) -->
+  <section class="section" id="publications">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-scroll"></i> Research Output</span>
+      <h2 class="section-title">IEEE Publication &amp; <span class="gradient-text">Research</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="pub-showcase-container glass-card">
+      <div class="pub-header">
+        <div class="pub-badge"><i class="fas fa-microchip"></i> IEEE i3ctcon 2026 Published</div>
+        <div class="pub-date"><i class="far fa-calendar-check"></i> March 14, 2026</div>
+      </div>
+
+      <h3 class="pub-main-title">
+        Unpaired Adverse-Weather Image Translation Using GAN Architectures with XAI-Driven Interpretability Across Multi-Domain Conditions
+      </h3>
+
+      <div class="pub-authors-strip">
+        <span><i class="fas fa-user-pen"></i> <strong>Authors:</strong> Skanda R. Bharadwaja &amp; 5 Co-authors</span>
+        <span><i class="fas fa-chalkboard-user"></i> <strong>Mentors:</strong> Prof Ashwini, Prof Merin Thomas</span>
+      </div>
+
+      <div class="pub-tags-row">
+        <span class="pub-tag">Deep Learning</span>
+        <span class="pub-tag">Generative Adversarial Networks</span>
+        <span class="pub-tag">Explainable AI (XAI)</span>
+        <span class="pub-tag">Image-to-Image Translation</span>
+        <span class="pub-tag">Computer Vision</span>
+      </div>
+
+      <div class="pub-abstract-box">
+        <h4><i class="fas fa-file-lines"></i> Research Abstract &amp; Framework</h4>
+        <p>
+          This research introduces a novel deep learning framework designed to translate autonomous driving camera feeds between 
+          multiple adverse weather conditions (Rain, Heavy Fog, Snow) using unpaired Generative Adversarial Networks (GANs). 
+          We deployed CycleGAN and FastCUT architectures with a ResNet-based generator enhanced by VGG Perceptual loss. 
+          To interpret model decision-making across weather domains, Explainable AI (XAI) techniques (Grad-CAM &amp; LIME) were integrated, 
+          providing spatial heatmaps of generator focus regions. Performance was validated with quantitative benchmarks: FID, PSNR, and SSIM.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL DETAILS & CONTACT SECTION -->
+  <section class="section" id="contact">
+    <div class="section-header center-header">
+      <span class="section-tag"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+      <h2 class="section-title">Let's Connect &amp; <span class="gradient-text">Collaborate</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Left Column: Personal Specs & Info -->
+      <div class="contact-specs-card glass-card" data-tilt>
+        <h3><i class="fas fa-id-card"></i> Personal Details &amp; Location</h3>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <i class="fas fa-user"></i>
+            <div><span>Gender / Status</span><strong>Male | Single</strong></div>
+          </div>
+
+          <div class="spec-item">
+            <i class="fas fa-cake-candles"></i>
+            <div><span>Date of Birth</span><strong>03 Mar, 2005</strong></div>
+          </div>
+
+          <div class="spec-item">
+            <i class="fas fa-language"></i>
+            <div><span>Languages</span><strong>Kannada, English</strong></div>
+          </div>
+
+          <div class="spec-item full-width">
+            <i class="fas fa-location-dot"></i>
+            <div><span>Current Address</span><strong>62, 2nd Main, Sait Lotus Layout, Rajarajeshwari Nagar, Bengaluru, KA</strong></div>
+          </div>
+
+          <div class="spec-item full-width">
+            <i class="fas fa-house-chimney"></i>
+            <div><span>Permanent Address</span><strong>5, 3rd Main, 5th Cross, Saraswathipuram, Mysuru, KA - 570009</strong></div>
+          </div>
+        </div>
+
+        <div class="direct-contact-pills">
+          <a href="mailto:skandarb.btech23@rvu.edu.in" class="c-pill"><i class="fas fa-envelope"></i> skandarb.btech23@rvu.edu.in</a>
+          <a href="mailto:skandarb2005@gmail.com" class="c-pill"><i class="fas fa-envelope"></i> skandarb2005@gmail.com</a>
+          <a href="tel:+919148246127" class="c-pill"><i class="fas fa-phone"></i> +91-9148246127</a>
+          <a href="https://www.linkedin.com/in/skanda-r-a58524386/" target="_blank" rel="noopener" class="c-pill c-link"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Quick Form -->
+      <div class="contact-form-card glass-card" data-tilt>
+        <h3><i class="fas fa-message"></i> Send a Direct Message</h3>
+        
+        <form id="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="c-name">Your Name</label>
+            <input type="text" id="c-name" placeholder="e.g. Alex Mercer" required>
+          </div>
+
+          <div class="form-group">
+            <label for="c-email">Your Email</label>
+            <input type="email" id="c-email" placeholder="e.g. alex@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" rows="4" placeholder="Hi Skanda, I would love to discuss an AI engineering opportunity..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-full btn-primary" id="send-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FLOATING CLI TERMINAL MODAL -->
+  <div class="cli-modal-overlay" id="cli-modal">
+    <div class="cli-window glass-panel">
+      <div class="cli-window-header">
+        <div class="cli-dots">
+          <span class="dot red" id="cli-close"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="cli-title"><i class="fas fa-terminal"></i> skanda@portfolio:~ (bash)</div>
+        <div class="cli-actions">
+          <button class="cli-btn" id="cli-clear-btn">Clear</button>
+        </div>
+      </div>
+
+      <div class="cli-presets">
+        <span class="preset-label">Quick Commands:</span>
+        <button class="cli-chip" data-cmd="help">help</button>
+        <button class="cli-chip" data-cmd="summary">summary</button>
+        <button class="cli-chip" data-cmd="skills">skills</button>
+        <button class="cli-chip" data-cmd="projects">projects</button>
+        <button class="cli-chip" data-cmd="pub">pub</button>
+        <button class="cli-chip" data-cmd="education">education</button>
+        <button class="cli-chip" data-cmd="contact">contact</button>
+      </div>
+
+      <div class="cli-body" id="cli-body">
+        <div class="cli-line">Welcome to Skanda's Interactive CLI v2.0. Type <span class="cmd-highlight">'help'</span> for available commands.</div>
+      </div>
+
+      <div class="cli-input-row">
+        <span class="prompt-text">skanda@portfolio:~$</span>
+        <input type="text" id="cli-input" placeholder="type a command..." autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE AI RESUME ASSISTANT FLOATING WIDGET -->
+  <div class="bot-widget-wrapper">
+    <!-- Trigger Button -->
+    <button class="bot-trigger-btn" id="bot-trigger" aria-label="Open AI Resume Assistant">
+      <i class="fas fa-robot"></i>
+      <span class="bot-pulse"></span>
+    </button>
+
+    <!-- Chat Modal Window -->
+    <div class="bot-chat-window glass-panel" id="bot-window">
+      <div class="bot-header">
+        <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+        <div class="bot-info">
+          <h4>Skanda AI Assistant</h4>
+          <span class="bot-status"><span class="green-dot"></span> Online • Resume Knowledge Base</span>
+        </div>
+        <button class="bot-close" id="bot-close-btn">&times;</button>
+      </div>
+
+      <div class="bot-body" id="bot-messages">
+        <div class="bot-msg msg-ai">
+          Hi there! I am Skanda's AI Assistant. Ask me anything about Skanda's open-source projects (Atlas, Intellect, Emotion Drift), RAG chatbot internship, or IEEE research!
+        </div>
+      </div>
+
+      <div class="bot-chips">
+        <button class="chip" data-q="Tell me about Atlas Multi-Agent RAG">Atlas RAG Chatbot</button>
+        <button class="chip" data-q="Tell me about Intellect Document Assistant">Intellect Assistant</button>
+        <button class="chip" data-q="Tell me about his IEEE publication">IEEE Publication</button>
+        <button class="chip" data-q="How can I contact Skanda?">Contact Info</button>
+      </div>
+
+      <div class="bot-input-row">
+        <input type="text" id="bot-input" placeholder="Type your question..." autocomplete="off">
+        <button id="bot-send-btn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#home" class="footer-logo">SRB.</a>
+        <p>&copy; 2026 Skanda Ramesh Bharadwaja. All rights reserved.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/skanda-r-a58524386/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:skandarb.btech23@rvu.edu.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+919148246127" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DEPENDENCIES & SCRIPT -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
